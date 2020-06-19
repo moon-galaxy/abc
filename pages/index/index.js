@@ -27,31 +27,37 @@ Page({
     this.getFloorList()
   },
   // 获取轮播图数据
-  getSwiperList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
-    }).then((res) => {
-      const { message: swiperList } = res.data
-      this.setData({ swiperList })
-    })
+  async getSwiperList() {
+    // request({
+    //   url: 'home/swiperdata'
+    // }).then((res) => {
+    //   const { message: swiperList } = res.data
+    //   this.setData({ swiperList })
+    // })
+    const swiperList = await request({ url: 'home/swiperdata' })
+    this.setData({ swiperList })
   },
   // 获取分类导航数据
-  getCateList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
-    }).then((res) => {
-      const { message: catesList } = res.data
-      this.setData({ catesList })
-    })
+  async getCateList() {
+    // request({
+    //   url: 'home/catitems'
+    // }).then((res) => {
+    //   const { message: catesList } = res.data
+    //   this.setData({ catesList })
+    // })
+    const catesList = await request({ url: 'home/catitems' })
+    this.setData({ catesList })
   },
   // 获取楼层数据
-  getFloorList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
-    }).then((res) => {
-      const { message: floorList } = res.data
-      this.setData({ floorList })
-    })
+  async getFloorList() {
+    // request({
+    //   url: 'home/floordata'
+    // }).then((res) => {
+    //   const { message: floorList } = res.data
+    //   this.setData({ floorList })
+    // })
+    const floorList = await request({ url: 'home/floordata' })
+    this.setData({ floorList })
   },
   onReady: function () {},
   onShow: function () {},
