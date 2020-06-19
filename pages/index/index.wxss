@@ -1,1 +1,61 @@
-@import '../../styles/iconfont.wxss';
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1893210_sokhn1whpk.eot?t=1592466097844');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_1893210_sokhn1whpk.eot?t=1592466097844#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALIAAsAAAAABnAAAAJ6AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAp8gR4BNgIkAwgLBgAEIAWEbQcwG8QFyA4lBZHADCACAUQE1bL17M09IUdF4bMOUYFF4TAKBRanMDL6bMRPrmm+wG5qnN4sIKoiJ9/vQ775dAAgp+eBhJowmyuoTbjNTffgmOmifCB5QHPLCI4EHNh0QJH9T/Yv9MY/jF3gEvYTaDetFXc4v+oBFskaFog7gU8CS84pJYu0Co2auSmeQK21POg+8Rj+fvzbCgtFXbFyTm7nMmDyy2nH6A+qB659BHAR0OIaFTYBSVzUBo/oBSPqtQcN5oF9ZQZfc9WmrxZ7VQj2r7PSO8EkZN4Ty2XfanoBGTcvA/ZHtaWMO7Z9HxXusGwRroqEg1J7+3VlxHt3/XhIXyv+7JneYtFTLvfB6O1tbUtmYLI9HwzR9v18eyjYTvedDwSDtH2yL+W8v719aJxrPIgV/uKCL1h3ecHxHL68xEHo4hLswn9W3ej+BILn0cG3eM/of2tHgs++kfdQnvqZaT2FKfhVrJ5VqXMsVUmVVWsulkcNLWjXjiZs7fczVjp0X/rQmmMxKFpMQaXVIjKxm1DrsA0NrXag3YaFxR0GUHqRbVh3CiD0eoWi2wtUen0hE/sNtWG/0NAbemh3FTVrdlgOwTZDUZKhDExtQiFNFOxomC3KdCG+ICVplhOSfIhqggd2tXcWIwtIQXSOCdoa380YhpgSGc6Dw5AkEahSkkNp1p5lTB3u6MB139SeJjKwOUAhSQySAaVsggRphAL7jRlb6eddEF6BJIm25NXofRBKI7QOdWnX2QO5IFR65d3LI5o1vG4Mg0EYRcigedALkUgISK3vlYOkMe2yI/yqYR12PdxX2L6+WP6ADFaEJSthd6s07klBKxAAAAAAAA==') format('woff2'), url('//at.alicdn.com/t/font_1893210_sokhn1whpk.woff?t=1592466097844') format('woff'), url('//at.alicdn.com/t/font_1893210_sokhn1whpk.ttf?t=1592466097844') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('//at.alicdn.com/t/font_1893210_sokhn1whpk.svg?t=1592466097844#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-sousuo:before {
+  content: '\e621';
+}
+.index_swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+.index_cate {
+  display: flex;
+  padding: 20rpx;
+}
+.index_cate navigator {
+  flex: 1;
+}
+.index_cate navigator image {
+  width: 100%;
+}
+.index_floor .floor_title image {
+  width: 100vw;
+}
+.floor_list navigator {
+  float: left;
+  width: 33.33vw;
+}
+.floor_list navigator:nth-last-child(-n + 4) {
+  height: 27.72711207vw;
+  border-left: 10rpx solid #fff;
+}
+.floor_list navigator:nth-child(2),
+.floor_list navigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.floor_list navigator image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: -4px;
+}
+.clearfix::after {
+  content: '.';
+  visibility: hidden;
+  display: block;
+  height: 0px;
+  clear: both;
+}
