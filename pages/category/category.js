@@ -1,66 +1,50 @@
-// pages/category/category.js
-Page({
+import { request } from '../../request/index.js'
 
+// pages/category/category.js
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    // 分类数据
+    categoryList: [],
+    //左侧菜单数据
+    leftMenuList: [],
+    // 右侧内容数据
+    rightContentList: [],
+    // 激活的左侧菜单
+    currentIndex: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCategoryList()
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取分类数据
    */
-  onReady: function () {
-
+  getCategoryList() {
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories'
+    }).then((res) => {
+      const { message: categoryList } = res.data
+      this.setData({ categoryList })
+      const leftMenuList = categoryList.map((v) => v.cat_name)
+      const rightContentList = categoryList[0].children
+      console.log(rightContentList)
+      this.setData({ leftMenuList, rightContentList })
+    })
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 点击菜单触发
    */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleItemTap(e) {
+    // console.log(e)
+    const currentIndex = e.currentTarget.dataset.index
+    const rightContentList = this.data.categoryList[currentIndex].children
+    this.setData({ currentIndex, rightContentList })
   }
 })
